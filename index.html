@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three Powers — World War Three Exercise</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%2312110e' width='32' height='32'/%3E%3Cpath d='M5 25V7h4.2l6.8 10.2L22.8 7H27v18h-3.6V13.2L18.2 21h-4.4L9 13.2V25z' fill='%23c6a15b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,500;0,7..72,650;1,7..72,500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#briefing">Skip to briefing</a>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <p class="eyebrow"><span id="stamp" class="stamp">Sample data</span> Staff exercise · not a forecast</p>
+      <h1>World<br>War Three</h1>
+      <p class="lede">Three countries. The specs you give them. The war those numbers can actually support.</p>
+    </div>
+    <div class="controls">
+      <label>Scenario year
+        <input id="year" type="number" min="1939" max="2200" inputmode="numeric" autocomplete="off">
+      </label>
+      <label>Exercise title
+        <input id="title" type="text" maxlength="64" autocomplete="off" spellcheck="false">
+      </label>
+      <div class="tone" id="tone" role="group" aria-label="Briefing tone">
+        <button type="button" data-tone="operatic" aria-pressed="true">Operatic brief</button>
+        <button type="button" data-tone="cold" aria-pressed="false">Cold staff paper</button>
+      </div>
+      <p id="save-state" class="save-state"></p>
+    </div>
+  </header>
+
+  <div class="banner-row">
+    <div>
+      <p id="banner-dyn" class="banner"></p>
+      <p class="fine">Prefilled figures are fictional <strong>sample data</strong> — invented powers at realistic scales, not a real order of battle and not a forecast.</p>
+    </div>
+    <div class="banner-actions">
+      <a class="jump" href="#orders">Edit the three powers</a>
+      <button type="button" id="reset">Restore sample</button>
+    </div>
+  </div>
+
+  <section id="briefing">
+    <div class="section-head">
+      <h2>The briefing</h2>
+      <p>Close files can be read more than one honest way. The exercise keeps the sharper war.</p>
+    </div>
+    <div id="verdict"></div>
+    <div id="plates" class="phases" role="tablist" aria-label="War files"></div>
+    <article id="dossier"></article>
+  </section>
+
+  <section class="block" id="balance-wrap">
+    <div class="section-head">
+      <h2>Balance of advantage</h2>
+      <p>Each bar is the three powers weighed against each other. Move a spec and the bar moves at once.</p>
+    </div>
+    <div id="balance"></div>
+  </section>
+
+  <section class="block" id="orders">
+    <div class="section-head">
+      <h2>Orders of battle</h2>
+      <p class="swipe-hint">On a narrower screen, swipe the three powers sideways.</p>
+      <p>Change any figure. This browser remembers it, and the briefing above is rewritten from the new sum.</p>
+    </div>
+    <div id="cards"></div>
+  </section>
+
+  <footer>
+    <p>Everything runs in this page. Specs stay in localStorage on this device. No account, no upload, no outside data.</p>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
